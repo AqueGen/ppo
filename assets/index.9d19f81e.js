@@ -911,7 +911,7 @@ function Mn(e, t, n, s=!0) {
         const c = t.appContext.config.errorHandler;
         if (c) {
             nt(c, null, 10, [e, i, l]);
-            
+
             return
         }
     }
@@ -3843,7 +3843,6 @@ const Lc = Io(Tc, [["render", Fc]])
                 dshk_ammunition_consumption: null,
                 browning_ammunition_consumption: null,
                 pkm_ammunition_consumption: null,
-                m75_ammunition_consumption: null,
                 description: null
             },
             flags: {
@@ -3862,7 +3861,6 @@ const Lc = Io(Tc, [["render", Fc]])
             dshk_ammunition_consumption: null,
             browning_ammunition_consumption: null,
             pkm_ammunition_consumption: null,
-            m75_ammunition_consumption: null,
             description: null,
             popupMessage: null,
             now: new Date,
@@ -3873,7 +3871,7 @@ const Lc = Io(Tc, [["render", Fc]])
         dataForClipboard() {
             return {
                 title: "\u041F\u043E\u0432\u0456\u0434\u043E\u043C\u043B\u0435\u043D\u043D\u044F \u043F\u0440\u043E \u0432\u0438\u044F\u0432\u043B\u0435\u043D\u043D\u044F \u0446\u0456\u043B\u0456",
-                text: (this.form.time ? "" + this.form.time + " " : "") + (this.form.sign ? ` ${this.form.sign}` : "") + (this.form.nearestCity ? `\u0020\u043D.\u043F. ${this.form.nearestCity}` : "") + (this.form.target ? ` ${this.form.target}` : "") + (this.form.target_side ? ` (${this.form.target_side})` : ``) + (this.form.target_description ? ` ${this.form.target_description}` : "") + (this.form.disclosure ? "\u0020\u0412\u0438\u044F\u0432: " + this.form.disclosure + " " : "") + (this.form.tcil ? "\u0426\u0456\u043B\u044C: " + this.form.tcil + " " : "") + (this.form.number_of_targets ? `\u0020\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C: ${this.form.number_of_targets}\u043E\u0434. ` : "") + (this.form.azimuth ? `\u0020\u0410-${this.form.azimuth}\xB0` : "") + (this.form.direction ? `\u0020\u041A- ${this.form.direction}\xB0` : "") + (this.form.height ? `\u0020\u041D- ${this.form.height}\u043C. ` : "") + (this.form.distance ? `\u0020\u0414- ${this.form.distance}\u043C.` : "") + (this.form.target_action ? "" + this.form.target_action + " " : "") + (this.form.ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u0417\u041a Victor KPVT-14.5mm=" + this.form.ammunition_consumption +  "шт. (в т.ч. БЗТ-" + Math.round(this.form.ammunition_consumption / 4) + "шт., МДЗ-" + (this.form.ammunition_consumption - Math.round(this.form.ammunition_consumption / 4)) + "шт.)." + " " : "") + (this.form.ak_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u0410\u041a74-5.45mm=" + this.form.ak_ammunition_consumption + "шт (в т.ч. ТЗ-" + Math.round(this.form.ak_ammunition_consumption / 3) + "шт., ПС-" + (this.form.ak_ammunition_consumption-Math.round(this.form.ak_ammunition_consumption / 3)) + "шт.)." + `` : "") + (this.form.dshk_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u0414\u0428\u041a-12.7mm=" + this.form.dshk_ammunition_consumption + "шт. " : "") + (this.form.browning_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a Browning M2-12.7mm=" + this.form.browning_ammunition_consumption + "шт. " : "") + (this.form.pkm_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u041f\u041a\u041c-7.62mm=" + this.form.pkm_ammunition_consumption + "шт. " : "") + (this.form.m75_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 M75-20.0mm=" + this.form.m75_ammunition_consumption + "шт. " : "") + (this.form.description ? " " + this.form.description + `` : "")
+                text: (this.form.time ? "" + this.form.time + " " : "") + (this.form.sign ? ` ${this.form.sign}` : "") + (this.form.nearestCity ? `\u0020\u043D.\u043F. ${this.form.nearestCity}` : "") + (this.form.target ? ` ${this.form.target}` : "") + (this.form.target_side ? ` (${this.form.target_side})` : ``) + (this.form.target_description ? ` ${this.form.target_description}` : "") + (this.form.disclosure ? "\u0020\u0412\u0438\u044F\u0432: " + this.form.disclosure + " " : "") + (this.form.tcil ? "\u0426\u0456\u043B\u044C: " + this.form.tcil + " " : "") + (this.form.number_of_targets ? `\u0020\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C: ${this.form.number_of_targets}\u043E\u0434. ` : "") + (this.form.azimuth ? `\u0020\u0410-${this.form.azimuth}\xB0` : "") + (this.form.direction ? `\u0020\u041A- ${this.form.direction}\xB0` : "") + (this.form.height ? `\u0020\u041D- ${this.form.height}\u043C. ` : "") + (this.form.distance ? `\u0020\u0414- ${this.form.distance}\u043C.` : "") + (this.form.target_action ? "" + this.form.target_action + " " : "") + (this.form.ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u0417\u041a Victor KPVT-14.5mm=" + this.form.ammunition_consumption + " " : "") + (this.form.ak_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u0410\u041a74-5.45mm=" + this.form.ak_ammunition_consumption + `` : "") + (this.form.dshk_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u0414\u0428\u041a-12.7mm=" + this.form.dshk_ammunition_consumption + "шт. " : "") + (this.form.browning_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a Browning M2-12.7mm=" + this.form.browning_ammunition_consumption + "шт. " : "") + (this.form.pkm_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u041f\u041a\u041c-7.62mm=" + this.form.pkm_ammunition_consumption + "шт. " : "") + (this.form.description ? " " + this.form.description + `` : "")
 
             }
         },
@@ -4430,18 +4428,6 @@ function bu(e, t, n, s, r, o) {
         id: "pkm_ammunition_consumption",
         modelValue: r.form.pkm_ammunition_consumption,
         "onUpdate:modelValue": t[30] || (t[30] = d => r.form.pkm_ammunition_consumption = d),
-        type: "tel",
-        class: "mt-1 block w-full",
-        required: ""
-    }, null, 8, ["modelValue"]),
-        // Поле для введення значення з коментарем "ПКМ-7.62mm"
-    F(l, {
-        for: "m75_ammunition_consumption"
-    }, "M75-20.0mm"),
-    F(c, {
-        id: "m75_ammunition_consumption",
-        modelValue: r.form.m75_ammunition_consumption,
-        "onUpdate:modelValue": t[31] || (t[31] = d => r.form.m75_ammunition_consumption = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""

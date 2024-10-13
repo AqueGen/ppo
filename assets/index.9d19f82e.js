@@ -3839,9 +3839,12 @@ const Lc = Io(Tc, [["render", Fc]])
                 target_action: null,
                 tcil: null,
                 ak_ammunition_consumption: null,
-                dshk_ammunition_consumption: null,
+                rpk_ammunition_consumption: null,
+                dp_ammunition_consumption: null,
+                maxim_ammunition_consumption: null,
+                pkt_ammunition_consumption: null,
                 browning_ammunition_consumption: null,
-                pkm_ammunition_consumption: null,
+                kpvt_ammunition_consumption: null,
                 soldier_fullname: null,
                 description: null
             },
@@ -3857,9 +3860,12 @@ const Lc = Io(Tc, [["render", Fc]])
             targets_bpla: [" \u0442\u0438\u043f\u0443 \u0417\u0430\u043b\u0430", " \u0442\u0438\u043f\u0443 \u0421\u0443\u043f\u0435\u0440\u043a\u0430\u043c", " \u0442\u0438\u043f\u0443 \u0428\u0430\u0445\u0435\u0434", " \u0442\u0438\u043f\u0443 \u041e\u0440\u043b\u0430\u043d", " \u0442\u0438\u043f\u0443 \u041b\u0430\u043d\u0446\u0435\u0442", " \u0442\u0438\u043f \u043d\u0435\u0432\u0438\u0437\u043d\u0430\u0447\u0435\u043d\u043e"],
             tcil: null,
             ak_ammunition_consumption: null,
-            dshk_ammunition_consumption: null,
+            rpk_ammunition_consumption: null,
+            dp_ammunition_consumption: null,
+            maxim_ammunition_consumption: null,
+            pkt_ammunition_consumption: null,
             browning_ammunition_consumption: null,
-            pkm_ammunition_consumption: null,
+            kpvt_ammunition_consumption: null,
             soldier_fullname: null,
             description: null,
             popupMessage: null,
@@ -3871,7 +3877,29 @@ const Lc = Io(Tc, [["render", Fc]])
         dataForClipboard() {
             return {
                 title: "\u041F\u043E\u0432\u0456\u0434\u043E\u043C\u043B\u0435\u043D\u043D\u044F \u043F\u0440\u043E \u0432\u0438\u044F\u0432\u043B\u0435\u043D\u043D\u044F \u0446\u0456\u043B\u0456",
-                text: (this.form.time ? "" + this.form.time + " " : "") + (this.form.sign ? ` ${this.form.sign}` + " " : "") + "ДФТГ #8 " + (this.form.nearestCity ? `\u0020\u043D.\u043F. ${this.form.nearestCity}` + " " : "") + (this.form.target ? ` ${this.form.target}` : "") + (this.form.target_side ? ` (${this.form.target_side})` : ``) + (this.form.target_description ? ` ${this.form.target_description}` : "") + (this.form.disclosure ? "\u0020\u0412\u0438\u044F\u0432: " + this.form.disclosure + " " : "") + (this.form.tcil ? "\u0426\u0456\u043B\u044C: " + this.form.tcil + " " : "") + (this.form.number_of_targets ? `\u0020\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C: ${this.form.number_of_targets}\u043E\u0434. ` : "") + (this.form.azimuth ? `\u0020\u0410-${this.form.azimuth}\xB0` : "") + (this.form.direction ? `\u0020\u041A- ${this.form.direction}\xB0` : "") + (this.form.height ? `\u0020\u041D- ${this.form.height}\u043C. ` : "") + (this.form.distance ? `\u0020\u0414- ${this.form.distance}\u043C.` : "") + (this.form.target_action ? "" + this.form.target_action + " " : "") + (this.form.ak_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u0410\u041a74-5.45mm=" + this.form.ak_ammunition_consumption + "шт. " : "") + (this.form.dshk_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u0414\u0428\u041a-12.7mm=" + this.form.dshk_ammunition_consumption + "шт. " : "") + (this.form.browning_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a Browning M2-12.7mm=" + this.form.browning_ammunition_consumption + "шт. " : "") + (this.form.pkm_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u041f\u041a\u041c-7.62mm=" + this.form.pkm_ammunition_consumption + "шт. " : "") + (this.form.soldier_fullname ? " " + "ПІБ " + this.form.soldier_fullname + `` : "") + (this.form.description ? " " + this.form.description + `` : "")
+                text: (this.form.time ? "" + this.form.time + " " : "")
+                    + (this.form.sign ? ` ${this.form.sign}` + " " : "")
+                    + "ДФТГ #8 " + (this.form.nearestCity ? `\u0020\u043D.\u043F. ${this.form.nearestCity}` + " " : "")
+                    + (this.form.target ? ` ${this.form.target}` : "")
+                    + (this.form.target_side ? ` (${this.form.target_side})` : ``)
+                    + (this.form.target_description ? ` ${this.form.target_description}` : "")
+                    + (this.form.disclosure ? "\u0020\u0412\u0438\u044F\u0432: " + this.form.disclosure + " " : "")
+                    + (this.form.tcil ? "\u0426\u0456\u043B\u044C: " + this.form.tcil + " " : "")
+                    + (this.form.number_of_targets ? `\u0020\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C: ${this.form.number_of_targets}\u043E\u0434. ` : "")
+                    + (this.form.azimuth ? `\u0020\u0410-${this.form.azimuth}\xB0` : "")
+                    + (this.form.direction ? `\u0020\u041A- ${this.form.direction}\xB0` : "")
+                    + (this.form.height ? `\u0020\u041D- ${this.form.height}\u043C. ` : "")
+                    + (this.form.distance ? `\u0020\u0414- ${this.form.distance}\u043C.` : "")
+                    + (this.form.target_action ? "" + this.form.target_action + " " : "")
+                    + (this.form.ak_ammunition_consumption ? "Витрати БК АК-74–5.45мм=" + this.form.ak_ammunition_consumption + "шт. " : "")
+                    + (this.form.rpk_ammunition_consumption ? "Витрати БК РПК-74–5.45мм=" + this.form.rpk_ammunition_consumption + "шт. " : "")
+                    + (this.form.dp_ammunition_consumption ? "Витрати БК ДП-27–7.62мм=" + this.form.dp_ammunition_consumption + "шт. " : "")
+                    + (this.form.maxim_ammunition_consumption ? "Витрати БК Максим–7.62мм=" + this.form.maxim_ammunition_consumption + "шт. " : "")
+                    + (this.form.pkt_ammunition_consumption ? "Витрати БК ПКТ–7.62мм=" + this.form.pkt_ammunition_consumption + "шт. " : "")
+                    + (this.form.browning_ammunition_consumption ? "Витрати БК Browning M2-12.7мм=" + this.form.browning_ammunition_consumption + "шт. " : "")
+                    + (this.form.kpvt_ammunition_consumption ? "Витрати БК КПВТ–14.5мм=" + this.form.kpvt_ammunition_consumption + "шт. " : "")
+                    + (this.form.soldier_fullname ? " " + "ПІБ " + this.form.soldier_fullname + `` : "")
+                    + (this.form.description ? " " + this.form.description + `` : "")
 
             }
         },
@@ -4388,10 +4416,10 @@ function bu(e, t, n, s, r, o) {
         class: "mt-1 block w-full",
         required: ""
     }, null, 8, ["modelValue"]),
-    // Поле для введення значення з коментарем "АК74-5.45"
+    // Поле для введення значення з коментарем "АК-74–5.45мм"
     F(l, {
         for: "ak_ammunition_consumption"
-    }, "АК74-5.45mm"),
+    }, "АК-74–5.45мм"),
     F(c, {
         id: "ak_ammunition_consumption",
         modelValue: r.form.ak_ammunition_consumption,
@@ -4400,38 +4428,74 @@ function bu(e, t, n, s, r, o) {
         class: "mt-1 block w-full",
         required: ""
     }, null, 8, ["modelValue"]),
-        // Поле для введення значення з коментарем "ДШК-12.7мм"
+    // Поле для введення значення з коментарем "РПК-74–5.45мм"
     F(l, {
-        for: "dshk_ammunition_consumption"
-    }, "ДШК-12.7mm"),
+        for: "rpk_ammunition_consumption"
+    }, "РПК-74–5.45мм"),
     F(c, {
-        id: "dshk_ammunition_consumption",
-        modelValue: r.form.dshk_ammunition_consumption,
-        "onUpdate:modelValue": t[28] || (t[28] = d => r.form.dshk_ammunition_consumption = d),
+        id: "rpk_ammunition_consumption",
+        modelValue: r.form.rpk_ammunition_consumption,
+        "onUpdate:modelValue": t[34] || (t[34] = d => r.form.rpk_ammunition_consumption = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
     }, null, 8, ["modelValue"]),
-        // Поле для введення значення з коментарем "Browning M2-12.7mm"
+    // Поле для введення значення з коментарем "ДП-27–7.62мм"
+    F(l, {
+        for: "dp_ammunition_consumption"
+    }, "ДП-27–7.62мм"),
+    F(c, {
+        id: "dp_ammunition_consumption",
+        modelValue: r.form.dp_ammunition_consumption,
+        "onUpdate:modelValue": t[28] || (t[28] = d => r.form.dp_ammunition_consumption = d),
+        type: "tel",
+        class: "mt-1 block w-full",
+        required: ""
+    }, null, 8, ["modelValue"]),
+    // Поле для введення значення з коментарем "Максим–7.62мм"
+    F(l, {
+        for: "maxim_ammunition_consumption"
+    }, "Максим–7.62мм"),
+    F(c, {
+        id: "maxim_ammunition_consumption",
+        modelValue: r.form.maxim_ammunition_consumption,
+        "onUpdate:modelValue": t[29] || (t[29] = d => r.form.maxim_ammunition_consumption = d),
+        type: "tel",
+        class: "mt-1 block w-full",
+        required: ""
+    }, null, 8, ["modelValue"]),
+    // Поле для введення значення з коментарем "ПКТ–7.62мм"
+    F(l, {
+        for: "pkt_ammunition_consumption"
+    }, "ПКТ–7.62мм"),
+    F(c, {
+        id: "pkt_ammunition_consumption",
+        modelValue: r.form.pkt_ammunition_consumption,
+        "onUpdate:modelValue": t[30] || (t[30] = d => r.form.pkt_ammunition_consumption = d),
+        type: "tel",
+        class: "mt-1 block w-full",
+        required: ""
+    }, null, 8, ["modelValue"]),
+    // Поле для введення значення з коментарем "Browning M2–12.7мм"
     F(l, {
         for: "browning_ammunition_consumption"
-    }, "Browning M2-12.7mm"),
+    }, "Browning M2–12.7мм"),
     F(c, {
         id: "browning_ammunition_consumption",
-        modelValue: r.form.dbrowning_ammunition_consumption,
-        "onUpdate:modelValue": t[29] || (t[29] = d => r.form.browning_ammunition_consumption = d),
+        modelValue: r.form.browning_ammunition_consumption,
+        "onUpdate:modelValue": t[31] || (t[31] = d => r.form.browning_ammunition_consumption = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
     }, null, 8, ["modelValue"]),
-         // Поле для введення значення з коментарем "ПКМ-7.62mm"
+    // Поле для введення значення з коментарем "КПВТ–14.5мм"
     F(l, {
-        for: "pkm_ammunition_consumption"
-    }, "ПКМ-7.62mm"),
+        for: "kpvt_ammunition_consumption"
+    }, "КПВТ–14.5мм"),
     F(c, {
-        id: "pkm_ammunition_consumption",
-        modelValue: r.form.pkm_ammunition_consumption,
-        "onUpdate:modelValue": t[30] || (t[30] = d => r.form.pkm_ammunition_consumption = d),
+        id: "kpvt_ammunition_consumption",
+        modelValue: r.form.kpvt_ammunition_consumption,
+        "onUpdate:modelValue": t[32] || (t[32] = d => r.form.kpvt_ammunition_consumption = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
@@ -4443,7 +4507,7 @@ function bu(e, t, n, s, r, o) {
     F(c, {
         id: "soldier_fullname",
         modelValue: r.form.soldier_fullname,
-        "onUpdate:modelValue": t[31] || (t[31] = d => r.form.soldier_fullname = d),
+        "onUpdate:modelValue": t[33] || (t[33] = d => r.form.soldier_fullname = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""

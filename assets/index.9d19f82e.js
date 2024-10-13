@@ -3936,17 +3936,24 @@ const Lc = Io(Tc, [["render", Fc]])
         },
         getCurrentTime: function(e=0) {
             const t = new Date(this.now);
-            t.setMinutes(t.getMinutes() + e),
-            this.now = t,
-            this.form.time = t.toLocaleString("uk-UA", {
+            t.setMinutes(t.getMinutes() + e);
+            this.now = t;
+
+            const time = t.toLocaleTimeString("uk-UA", {
                 timeZone: "Europe/Kiev",
                 hourCycle: "h23",
                 hour: "2-digit",
-                minute: "2-digit",
+                minute: "2-digit"
+            });
+
+            const date = t.toLocaleDateString("uk-UA", {
+                timeZone: "Europe/Kiev",
                 day: "2-digit",
                 month: "2-digit",
                 year: "numeric"
-            })
+            });
+
+            this.form.time = `${time} ${date}`;
         },
         getCoordinates() {
             navigator.geolocation ? navigator.geolocation.getCurrentPosition(e=>{

@@ -3838,11 +3838,11 @@ const Lc = Io(Tc, [["render", Fc]])
                 number_of_targets: null,
                 target_action: null,
                 tcil: null,
-                ammunition_consumption: null,
                 ak_ammunition_consumption: null,
                 dshk_ammunition_consumption: null,
                 browning_ammunition_consumption: null,
                 pkm_ammunition_consumption: null,
+                soldier_fullname: null,
                 description: null
             },
             flags: {
@@ -3856,11 +3856,11 @@ const Lc = Io(Tc, [["render", Fc]])
             target_action: [" \u0423\u0440\u0430\u0436\u0435\u043D\u043E", " \u041F\u043E\u0448\u043A\u043E\u0434\u0436\u0435\u043D\u043E", " \u041d\u0435 \u0432\u0440\u0430\u0436\u0435\u043d\u043e"],
             targets_bpla: [" \u0442\u0438\u043f\u0443 \u0417\u0430\u043b\u0430", " \u0442\u0438\u043f\u0443 \u0421\u0443\u043f\u0435\u0440\u043a\u0430\u043c", " \u0442\u0438\u043f\u0443 \u0428\u0430\u0445\u0435\u0434", " \u0442\u0438\u043f\u0443 \u041e\u0440\u043b\u0430\u043d", " \u0442\u0438\u043f\u0443 \u041b\u0430\u043d\u0446\u0435\u0442", " \u0442\u0438\u043f \u043d\u0435\u0432\u0438\u0437\u043d\u0430\u0447\u0435\u043d\u043e"],
             tcil: null,
-            ammunition_consumption: null,
             ak_ammunition_consumption: null,
             dshk_ammunition_consumption: null,
             browning_ammunition_consumption: null,
             pkm_ammunition_consumption: null,
+            soldier_fullname: null,
             description: null,
             popupMessage: null,
             now: new Date,
@@ -3871,7 +3871,7 @@ const Lc = Io(Tc, [["render", Fc]])
         dataForClipboard() {
             return {
                 title: "\u041F\u043E\u0432\u0456\u0434\u043E\u043C\u043B\u0435\u043D\u043D\u044F \u043F\u0440\u043E \u0432\u0438\u044F\u0432\u043B\u0435\u043D\u043D\u044F \u0446\u0456\u043B\u0456",
-                text: (this.form.time ? "" + this.form.time + " " : "") + (this.form.sign ? ` ${this.form.sign}` + " " : "") + "ДФТГ #8 " + (this.form.nearestCity ? `\u0020\u043D.\u043F. ${this.form.nearestCity}` + " " : "") + (this.form.target ? ` ${this.form.target}` : "") + (this.form.target_side ? ` (${this.form.target_side})` : ``) + (this.form.target_description ? ` ${this.form.target_description}` : "") + (this.form.disclosure ? "\u0020\u0412\u0438\u044F\u0432: " + this.form.disclosure + " " : "") + (this.form.tcil ? "\u0426\u0456\u043B\u044C: " + this.form.tcil + " " : "") + (this.form.number_of_targets ? `\u0020\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C: ${this.form.number_of_targets}\u043E\u0434. ` : "") + (this.form.azimuth ? `\u0020\u0410-${this.form.azimuth}\xB0` : "") + (this.form.direction ? `\u0020\u041A- ${this.form.direction}\xB0` : "") + (this.form.height ? `\u0020\u041D- ${this.form.height}\u043C. ` : "") + (this.form.distance ? `\u0020\u0414- ${this.form.distance}\u043C.` : "") + (this.form.target_action ? "" + this.form.target_action + " " : "") + (this.form.ak_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u0410\u041a74-5.45mm=" + this.form.ak_ammunition_consumption + "шт. " : "") + (this.form.dshk_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u0414\u0428\u041a-12.7mm=" + this.form.dshk_ammunition_consumption + "шт. " : "") + (this.form.browning_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a Browning M2-12.7mm=" + this.form.browning_ammunition_consumption + "шт. " : "") + (this.form.pkm_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u041f\u041a\u041c-7.62mm=" + this.form.pkm_ammunition_consumption + "шт. " : "") + (this.form.description ? " " + this.form.description + `` : "")
+                text: (this.form.time ? "" + this.form.time + " " : "") + (this.form.sign ? ` ${this.form.sign}` + " " : "") + "ДФТГ #8 " + (this.form.nearestCity ? `\u0020\u043D.\u043F. ${this.form.nearestCity}` + " " : "") + (this.form.target ? ` ${this.form.target}` : "") + (this.form.target_side ? ` (${this.form.target_side})` : ``) + (this.form.target_description ? ` ${this.form.target_description}` : "") + (this.form.disclosure ? "\u0020\u0412\u0438\u044F\u0432: " + this.form.disclosure + " " : "") + (this.form.tcil ? "\u0426\u0456\u043B\u044C: " + this.form.tcil + " " : "") + (this.form.number_of_targets ? `\u0020\u041A\u0456\u043B\u044C\u043A\u0456\u0441\u0442\u044C: ${this.form.number_of_targets}\u043E\u0434. ` : "") + (this.form.azimuth ? `\u0020\u0410-${this.form.azimuth}\xB0` : "") + (this.form.direction ? `\u0020\u041A- ${this.form.direction}\xB0` : "") + (this.form.height ? `\u0020\u041D- ${this.form.height}\u043C. ` : "") + (this.form.distance ? `\u0020\u0414- ${this.form.distance}\u043C.` : "") + (this.form.target_action ? "" + this.form.target_action + " " : "") + (this.form.ak_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u0410\u041a74-5.45mm=" + this.form.ak_ammunition_consumption + "шт. " : "") + (this.form.dshk_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u0414\u0428\u041a-12.7mm=" + this.form.dshk_ammunition_consumption + "шт. " : "") + (this.form.browning_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a Browning M2-12.7mm=" + this.form.browning_ammunition_consumption + "шт. " : "") + (this.form.pkm_ammunition_consumption ? "\u0412\u0438\u0442\u0440\u0430\u0442\u0438 \u0411\u041a \u041f\u041a\u041c-7.62mm=" + this.form.pkm_ammunition_consumption + "шт. " : "") + (this.form.soldier_fullname ? " " + "ПІБ " + this.form.soldier_fullname + `` : "") + (this.form.description ? " " + this.form.description + `` : "")
 
             }
         },
@@ -4432,6 +4432,18 @@ function bu(e, t, n, s, r, o) {
         id: "pkm_ammunition_consumption",
         modelValue: r.form.pkm_ammunition_consumption,
         "onUpdate:modelValue": t[30] || (t[30] = d => r.form.pkm_ammunition_consumption = d),
+        type: "tel",
+        class: "mt-1 block w-full",
+        required: ""
+    }, null, 8, ["modelValue"]),
+    // Поле для введення значення з коментарем "ПІБ"
+    F(l, {
+        for: "soldier_fullname"
+    }, "ПІБ"),
+    F(c, {
+        id: "soldier_fullname",
+        modelValue: r.form.soldier_fullname,
+        "onUpdate:modelValue": t[31] || (t[31] = d => r.form.soldier_fullname = d),
         type: "tel",
         class: "mt-1 block w-full",
         required: ""
